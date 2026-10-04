@@ -12,8 +12,8 @@
 // ==================================================
 // WIFI
 // ==================================================
-const char* WIFI_SSID = "adalahpokoknya";
-const char* WIFI_PASSWORD = "iyaiyadong";
+const char* WIFI_SSID = "";//sesuaikan nama wifi hostpot
+const char* WIFI_PASSWORD = "";//sesuaikan pass sesuai hotspot
 
 // ==================================================
 // EMQX CLOUD MQTT TLS
