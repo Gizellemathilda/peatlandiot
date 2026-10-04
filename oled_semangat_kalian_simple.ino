@@ -1,0 +1,30 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define I2C_SDA 32
+#define I2C_SCL 33
+
+Adafruit_SSD1306 display(128, 32, &Wire, -1);
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(I2C_SDA, I2C_SCL);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED gagal init");
+    while (true) delay(1000);
+  }
+
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 0);
+  display.println("Semangat Sayang");
+  display.setTextSize(1);
+  display.println();
+  display.println("I2C OK @ 0x3C");
+  display.display();
+}
+
+void loop() {}
